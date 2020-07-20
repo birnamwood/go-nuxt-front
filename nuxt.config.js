@@ -35,5 +35,18 @@ module.exports = {
       }
     }
   },
+  modules: [
+    '@nuxtjs/axios'
+  ],
+
+  axios: {
+    proxy: true
+  },
+  proxy: {
+    '/api/': {target: 'http://localhost:8000', pathRewrite: {'^/api/': '/'}}
+  },
+  plugins: [
+    {src: 'plugins/axios.js', ssr: false }
+  ],
 }
 
