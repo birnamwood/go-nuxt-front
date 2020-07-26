@@ -14,16 +14,20 @@ export default {
   data: function() {
     return {
       user: {
-        email: '',
-        password: '',
-        name: ''
+        Email: '',
+        Password: '',
+        Name: '',
+        Token: ''
       }
     }
   },
   methods: {
     createUser: function () {
-      if (!this.user.email) return;
-      axios.post('/api/signup', this.user).then((res) => {
+      if (!this.user.email || !this.user.password) {
+        console.log("必須情報です");
+        return;
+      }
+      axios.post('/api-server/api/v1/signup', this.user).then((res) => {
         console.log(this.user);
         console.log(res);
         this.$router.push({ path: '/' });

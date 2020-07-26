@@ -43,7 +43,7 @@ module.exports = {
     proxy: true
   },
   proxy: {
-    '/api/': {target: 'http://localhost:8000', pathRewrite: {'^/api/': '/'}}
+    '/api-server/': {target: 'http://localhost:8000', pathRewrite: {'^/api-server/': '/'}}
   },
   plugins: [
     {src: 'plugins/axios.js', ssr: false }
