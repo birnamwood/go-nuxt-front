@@ -3,6 +3,7 @@
     <nuxt-link to="/">TOP</nuxt-link>
     <nuxt-link to="/login">LOGIN</nuxt-link>
     <nuxt-link to="/signup">SIGNUP</nuxt-link>
+    <nuxt-link to="/users">USERS</nuxt-link>
   </div>
 </template>
 

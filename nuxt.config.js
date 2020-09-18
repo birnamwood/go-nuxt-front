@@ -46,7 +46,7 @@ module.exports = {
     '/api-server/': {target: 'http://localhost:8000', pathRewrite: {'^/api-server/': '/'}}
   },
   plugins: [
-    {src: 'plugins/axios.js', ssr: false }
+    {src: 'plugins/axios/index.js', ssr: false }
   ],
 }
 
