@@ -1,10 +1,10 @@
 <template>
   <div>
-    <Header/>
+    <Header class="header"/>
       <div class="main">
         <nuxt/>
       </div>
-    <Footer/>
+    <Footer class="footer"/>
   </div>
 </template>
 
@@ -20,7 +20,14 @@ export default {
 </script>
 <style>
 .main {
-  height: 600px;
+  min-height: 90vh;
+  padding: 3%;
+}
+.header {
+  height: 5vh;
+}
+.footer {
+  height: 5vh;
 }
 html {
   font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;

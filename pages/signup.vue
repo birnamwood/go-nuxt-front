@@ -1,9 +1,8 @@
 <template>
   <div class="signup-form">
-    <input placeholder="E-Mail" type="text" v-model="user.Email" required="required">
-    <input placeholder="Password" type="text" v-model="user.Password" required="required">
-    <input placeholder="Name" type="text" v-model="user.Name" required="required">
-    <br>
+    <input placeholder="E-Mail" type="text" v-model="user.Email">
+    <input placeholder="Password" type="text" v-model="user.Password">
+    <input placeholder="Name" type="text" v-model="user.Name">
     <button class="btn" @click="createUser">ユーザー登録</button>
   </div>
 </template>
@@ -27,7 +26,7 @@ export default {
       'setToken'
     ]),
     createUser: function () {
-      if (!this.user.Email || !this.user.Password) {
+      if (!this.user.Email || !this.user.Password || !this.user.Name) {
         alert("必須情報です");
         return;
       }
@@ -43,10 +42,5 @@ export default {
 </script>
 
 <style>
-.btn {
-  width: 100px;
-  height: 50px;
-  background-color: gray;
-}
 </style>
 
