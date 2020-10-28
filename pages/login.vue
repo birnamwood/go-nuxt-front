@@ -1,9 +1,14 @@
 <template>
-  <div class="login-form">
-    <input placeholder="E-Mail" type="text" v-model="user.Email">
-    <input placeholder="Password" type="text" v-model="user.Password">
-    <button class="btn" @click="login">ログイン</button>
-  </div>
+  <v-card class="login-form">
+    <v-card-title>
+      <h4>ログイン</h4>
+    </v-card-title>
+    <v-card-text>
+      <v-text-field label="メールアドレス" v-model="user.Email" />
+      <v-text-field label="パスワード" v-model="user.Password" />
+      <v-btn @click="login">ログイン</v-btn>
+    </v-card-text>
+  </v-card>
 </template>
 
 <script>
@@ -29,10 +34,14 @@ export default {
         return;
       }
       axios.post('/api-server/login', this.user).then(res => {
-        this.setToken(res.data);
-        this.$router.push({ path: '/' });
+        if (res.data != null) {
+          this.setToken(res.data);
+          this.$router.push({ path: '/' });
+        } else {
+          alert("ユーザー名かパスワードが違います。");
+        }
       }).catch (() => {
-        console.error("メールアドレスかパスワードが違います。");
+        alert("ユーザー名かパスワードが違います。");
       }) 
       
     },

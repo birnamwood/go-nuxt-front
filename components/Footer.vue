@@ -1,6 +1,7 @@
 <template>
-  <div class="footer">
-  </div>
+  <v-footer light app>
+    @copylight 2020
+  </v-footer>
 </template>
 
 <script>
@@ -10,10 +11,6 @@ export default {
 </script>
 
 <style>
-.footer {
-  width: 100%;
-  background-color: blue;
-}
 </style>
 
 
