@@ -1,10 +1,9 @@
 <template>
-<ul>
-  <li v-for="user in users" :key="user.ID">
-    {{user.Email}}
-  </li>
-</ul>
-  
+  <ul>
+    <li v-for="user in users" :key="user.ID">
+      {{user.Email}} : {{ user.Name }}
+    </li>
+  </ul>
 </template>
 
 <script>

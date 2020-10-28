@@ -1,16 +1,17 @@
 <template>
-  <div class="header">
-    <nuxt-link to="/">TOP</nuxt-link>
+  <v-app-bar light class="header" app>
+    <v-btn text><nuxt-link to="/">TOP</nuxt-link></v-btn>
     <template v-if="token == null">
-      <nuxt-link to="/login">LOGIN</nuxt-link>
-      <nuxt-link to="/signup">SIGNUP</nuxt-link>
+      <v-btn text><nuxt-link to="/login">LOGIN</nuxt-link></v-btn>
+      <v-btn text><nuxt-link to="/signup">SIGNUP</nuxt-link></v-btn>
     </template>
     <template v-else>
-      <a @click="logout()">LOGOUT</a>
-      <nuxt-link to="/users">USERS</nuxt-link>
+      <v-btn text><nuxt-link to="/users">ユーザー一覧</nuxt-link></v-btn>
+      <v-spacer></v-spacer>
       <span>ログイン中です:{{ userName }}</span>
+      <v-btn text><a @click="logout()">LOGOUT</a></v-btn>
     </template>
-  </div>
+  </v-app-bar>
 </template>
 
 <script>
@@ -53,9 +54,5 @@ export default {
 </script>
 
 <style>
-.header {
-  width: 100%;
-  background-color: green;
-}
 </style>
 

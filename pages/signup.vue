@@ -1,10 +1,15 @@
 <template>
-  <div class="signup-form">
-    <input placeholder="E-Mail" type="text" v-model="user.Email">
-    <input placeholder="Password" type="text" v-model="user.Password">
-    <input placeholder="Name" type="text" v-model="user.Name">
-    <button class="btn" @click="createUser">ユーザー登録</button>
-  </div>
+  <v-card class="signup-form">
+    <v-card-title>
+      <h4>サインアップ</h4>
+    </v-card-title>
+    <v-card-text>
+      <v-text-field label="メールアドレス" v-model="user.Email" />
+      <v-text-field label="パスワード" v-model="user.Password" />
+      <v-text-field label="名前" v-model="user.Name" />
+      <v-btn @click="createUser">ユーザー登録</v-btn>
+    </v-card-text>
+  </v-card>
 </template>
 
 <script>
